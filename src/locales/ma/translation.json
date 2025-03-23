@@ -1,0 +1,35 @@
+{
+    "navbar": {
+    "links": {
+      "solutions": "L7al",
+      "entreprise": "L'entreprise",
+      "ressources": "Ressources",
+      "developpeurs": "Développeurs",
+      "faqs": "FAQs"
+    },
+    "login": "Connexion",
+    "contact": "Service Commercial"
+  },
+    "hero": {
+      "title1": "Ftaḥ lqouwa dyal",
+      "title2": "souwa9 lmoṭawrin",
+      "subtitle1": "Nssa lbzaf dial lmochkil f lkhales, w dkhoul b tqa f l'Afri9ya, l'Asie w lMaghreb.",
+      "subtitle2": "Qbel w srif b zrbah b chkl mo9anin w ma3rouf, m3a platforma waḥda li katdkhl lik sou9 jdid.",
+      "cta": "T9ddam m3ana w kbar lbusiness dyalek"
+    },
+    
+    "pricing": {
+      "title": "Taman",
+      "features": {
+        "noSetup": "Bla frais d'installation",
+        "noMonthly": "Bla frais mensuels",
+        "payAsYouGo": "Tkhllass 3la 7ssab li derti"
+      },
+      "cards": {
+        "moroccan": "Cartes marocaines",
+        "international": "Cartes internationales",
+        "description": "Par transaction de carte réussie"
+      },
+      "banner": "ADP katkhdem remise ila fqt 500.000 Dhs f chi mois. Kan3tiw 7ta remises lmarques w commerçants locaux."
+    }
+  }

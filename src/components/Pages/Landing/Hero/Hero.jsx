@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-blue-900 w-full min-h-screen relative overflow-hidden">
       {/* Background gradient effects */}
@@ -10,30 +13,27 @@ const HeroSection = () => {
       </div>
       
       {/* Main content container */}
-      <div className="container mx-auto px-4 pt-32 pb-16 relative z-10 flex flex-col items-center justify-center text-center">
-        {/* Brand logo - optional as navbar will be added separately */}
+      <div className="container mx-auto px-4 pt-64 pb-16 relative z-10 flex flex-col items-center justify-center text-center">
         <div className="mb-16 md:mb-20">
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-            Débloquez la puissance des
+            {t('hero.title1')}
             <div className="text-cyan-300 mt-2">
-              marchés émergents
+              {t('hero.title2')}
             </div>
           </h1>
         </div>
-        
-        {/* Main subtitle */}
+
         <div className="max-w-4xl mx-auto">
           <p className="text-white text-lg md:text-xl mb-4">
-            Dites adieu aux défis des paiements complexes et entrez en toute confiance en Afrique, en Asie et au Maghreb.
+            {t('hero.subtitle1')}
           </p>
           <p className="text-white text-base md:text-lg mb-12">
-            Acceptez et déboursez une large gamme de méthodes de paiement locales et devises préférées par des milliards de consommateurs des marchés émergents, avec notre plateforme tout-en-un.
+            {t('hero.subtitle2')}
           </p>
         </div>
-        
-        {/* CTA button */}
+
         <button className="bg-white hover:bg-opacity-90 text-blue-900 font-medium py-3 px-8 rounded-md transition-all duration-300">
-          Contactez-nous et développez votre entreprise
+          {t('hero.cta')}
         </button>
       </div>
     </div>

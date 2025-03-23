@@ -1,0 +1,36 @@
+{ 
+  "navbar": {
+  "links": {
+    "solutions": "Solutions",
+    "entreprise": "Entreprise",
+    "ressources": "Ressources",
+    "developpeurs": "Développeurs",
+    "faqs": "FAQs"
+  },
+  "login": "Connexion",
+  "contact": "Service Commercial"
+},
+    "hero": {
+      "title1": "Débloquez la puissance des",
+      "title2": "marchés émergents",
+      "subtitle1": "Dites adieu aux défis des paiements complexes et entrez en toute confiance en Afrique, en Asie et au Maghreb.",
+      "subtitle2": "Acceptez et déboursez une large gamme de méthodes de paiement locales et devises préférées par des milliards de consommateurs des marchés émergents, avec notre plateforme tout-en-un.",
+      "cta": "Contactez-nous et développez votre entreprise"
+    },
+
+    "pricing": {
+      "title": "Tarification",
+      "features": {
+        "noSetup": "Pas de frais d'installation",
+        "noMonthly": "Pas de frais mensuels",
+        "payAsYouGo": "Payez comme vous le souhaitez"
+      },
+      "cards": {
+        "moroccan": "Cartes marocaines",
+        "international": "Cartes internationales",
+        "description": "Par transaction de carte réussie"
+      },
+      "banner": "ADP vous offre des remises sur le volume si vous réalisez plus de 500 000 Dirhams de ventes chaque mois. Nous offrons également des remises aux marques et aux marchands locaux."
+    }
+   
+  }

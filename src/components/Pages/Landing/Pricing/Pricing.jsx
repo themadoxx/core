@@ -1,12 +1,18 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import InfoBanner from '../../../banners/info/InfoBanner';
 import PricingCard from '../../../cards/PricingCard';
 import FeatureItem from '../../../icons/FeatureItem';
 
 const PricingSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-16 px-4 max-w-6xl mx-auto">
-      <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">Tarification</h2>
+      <h2 className="text-3xl font-bold text-center text-navy-900 mb-12">
+        {t('pricing.title')}
+      </h2>
       
       {/* Features */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -17,7 +23,7 @@ const PricingSection = () => {
               <path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14c1.1 0 2-.9 2-2V5a2 2 0 00-2-2zm0 16H5V5h14v14z"></path>
             </svg>
           } 
-          title="Pas de frais d'installation"
+          title={t('pricing.features.noSetup')}
         />
         <FeatureItem 
           icon={
@@ -26,7 +32,7 @@ const PricingSection = () => {
               <path d="M7 9h10v2H7zm0 4h5v2H7z"></path>
             </svg>
           } 
-          title="Pas de frais mensuels"
+          title={t('pricing.features.noMonthly')}
         />
         <FeatureItem 
           icon={
@@ -34,34 +40,34 @@ const PricingSection = () => {
               <path d="M21 18v1c0 1.1-.9 2-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14c1.1 0 2 .9 2 2v1h-9a2 2 0 00-2 2v8a2 2 0 002 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"></path>
             </svg>
           } 
-          title="Payez comme vous le souhaitez"
+          title={t('pricing.features.payAsYouGo')}
         />
       </div>
-      
+
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <PricingCard 
           flagIcon={<span className="text-lg">🇲🇦</span>}
-          cardTitle="Cartes marocaines"
+          cardTitle={t('pricing.cards.moroccan')}
           percentage="3.9"
           fee="2"
-          description="Par transaction de carte réussie"
+          description={t('pricing.cards.description')}
           bgColor="bg-green-400"
         />
         
         <PricingCard 
           flagIcon={<span className="text-lg">🌐</span>}
-          cardTitle="Cartes internationales"
+          cardTitle={t('pricing.cards.international')}
           percentage="4.9"
           fee="2"
-          description="Par transaction de carte réussie"
+          description={t('pricing.cards.description')}
           bgColor="bg-red-400"
         />
       </div>
-      
+
       {/* Info Banner */}
       <InfoBanner>
-        ADP vous offre des remises sur le volume si vous réalisez plus de 500 000 Dirhams de ventes chaque mois. Nous offrons également des remises aux marques et aux marchands locaux.
+        {t('pricing.banner')}
       </InfoBanner>
     </section>
   );

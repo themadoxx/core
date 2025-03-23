@@ -1,0 +1,36 @@
+{
+    "navbar": {
+    "links": {
+      "solutions": "Solutions",
+      "entreprise": "Company",
+      "ressources": "Resources",
+      "developpeurs": "Developers",
+      "faqs": "FAQs"
+    },
+    "login": "Login",
+    "contact": "Sales Team"
+  },
+  
+    "hero": {
+      "title1": "Unlock the power of",
+      "title2": "emerging markets",
+      "subtitle1": "Say goodbye to complex payment challenges and enter Africa, Asia, and the Maghreb with confidence.",
+      "subtitle2": "Accept and disburse a wide range of local payment methods and preferred currencies for billions of consumers in emerging markets, with our all-in-one platform.",
+      "cta": "Contact us and grow your business"
+    },
+
+    "pricing": {
+        "title": "Pricing",
+        "features": {
+          "noSetup": "No setup fees",
+          "noMonthly": "No monthly fees",
+          "payAsYouGo": "Pay as you go"
+        },
+        "cards": {
+          "moroccan": "Moroccan cards",
+          "international": "International cards",
+          "description": "Per successful card transaction"
+        },
+        "banner": "ADP offers volume discounts if you process more than 500,000 dirhams in sales each month. We also provide discounts to local brands and merchants."
+      }
+  }

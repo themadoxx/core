@@ -1,91 +1,96 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import LanguageSelector from '../../buttons/Language/LanguageSelector';
+import BurgerToggle from '../../buttons/Language/BurgerToggle';
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
-  
-  // Change navbar background on scroll
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const isWhiteMode = scrolled || menuOpen;
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
-    
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    }`}>
+    <nav className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 px-6 py-0 transition-all duration-300
+      ${isWhiteMode ? 'bg-white shadow-lg rounded-xl' : 'bg-white/10 backdrop-blur-md shadow-xs rounded-xl'}
+      max-w-7xl w-[95%]`}>
+      
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center text-2xl font-bold">
-              <span className="text-blue-900">africaine·</span>
-              <span className={scrolled ? 'text-gray-800' : 'text-white'}>d</span>
-              <span className={scrolled ? 'text-gray-800' : 'text-white'}>·paiements</span>
-            </a>
+          <a href="/" className="flex items-center text-2xl font-bold">
+            <span className="text-blue-900">a·</span>
+            <span className={isWhiteMode ? 'text-gray-800' : 'text-white'}>d</span>
+            <span className={isWhiteMode ? 'text-gray-800' : 'text-white'}>·paiements</span>
+          </a>
+
+          {/* Burger Mobile */}
+          <div className="md:hidden">
+            <BurgerToggle isOpen={menuOpen} toggle={() => setMenuOpen(!menuOpen)} />
           </div>
-          
-          {/* Navigation Links - Desktop */}
+
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink title="Solutions" scrolled={scrolled} />
-            <NavLink title="Coverage" scrolled={scrolled} />
-            <NavLink title="Customers" scrolled={scrolled} />
-            <NavLink title="Industries" scrolled={scrolled} />
-            <NavLink title="Company" scrolled={scrolled} />
-            <NavLink title="Resources" scrolled={scrolled} />
-            <NavLink title="Developers" scrolled={scrolled} />
-            <NavLink title="FAQs" scrolled={scrolled} />
+            <NavLink to="/solutions" label={t('navbar.links.solutions')} scrolled={scrolled} />
+            <NavLink to="/entreprise" label={t('navbar.links.entreprise')} scrolled={scrolled} />
+            <NavLink to="/ressources" label={t('navbar.links.ressources')} scrolled={scrolled} />
+            <NavLink to="/developpeurs" label={t('navbar.links.developpeurs')} scrolled={scrolled} />
           </div>
-          
-          {/* Right side buttons */}
-          <div className="flex items-center space-x-4">
-            {/* Language selector */}
-            <div className="relative">
-              <button className={`flex items-center ${scrolled ? 'text-gray-700' : 'text-white'}`}>
-                <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-                </svg>
-                EN
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-            </div>
-            
-            {/* Login button */}
-            <a href="/login" className={`font-medium ${scrolled ? 'text-gray-700' : 'text-white'}`}>
-              Login
+
+          {/* Desktop Right Side */}
+          <div className="hidden md:flex items-center space-x-4">
+            <LanguageSelector scrolled={scrolled} />
+            <a href="/login" className={`font-medium ${isWhiteMode ? 'text-gray-700' : 'text-white'}`}>
+              {t('navbar.login')}
             </a>
-            
-            {/* Contact Sales button */}
             <a href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300">
-              Contact Sales
+              {t('navbar.contact')}
             </a>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="md:hidden mt-2 pb-4 flex flex-col space-y-4">
+            <NavLink to="/solutions" label={t('navbar.links.solutions')} scrolled={true} />
+            <NavLink to="/entreprise" label={t('navbar.links.entreprise')} scrolled={true} />
+            <NavLink to="/ressources" label={t('navbar.links.ressources')} scrolled={true} />
+            <NavLink to="/developpeurs" label={t('navbar.links.developpeurs')} scrolled={true} />
+            <NavLink to="/faqs" label={t('navbar.links.faqs')} scrolled={true} />
+            <div className="flex flex-col space-y-2 pt-2 border-t border-gray-200">
+              <LanguageSelector scrolled={true} />
+              <a href="/login" className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md text-center">
+                {t('navbar.login')}
+              </a>
+              <a href="/contact" className="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md text-center">
+                {t('navbar.contact')}
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
 };
 
-// Reusable NavLink component
-const NavLink = ({ title, scrolled }) => (
-  <a 
-    href={`/${title.toLowerCase()}`} 
+// Reusable NavLink
+const NavLink = ({ to, label, scrolled }) => (
+  <a
+    href={to}
     className={`font-medium transition-colors duration-300 ${
       scrolled ? 'text-gray-700 hover:text-blue-900' : 'text-white hover:text-blue-100'
     }`}
   >
-    {title}
+    {label}
   </a>
 );
 

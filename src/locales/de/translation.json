@@ -1,0 +1,35 @@
+{
+    "navbar": {
+    "links": {
+      "solutions": "Lösungen",
+      "entreprise": "Unternehmen",
+      "ressources": "Ressourcen",
+      "developpeurs": "Entwickler",
+      "faqs": "FAQs"
+    },
+    "login": "Anmelden",
+    "contact": "Vertrieb kontaktieren"
+  },
+    "hero": {
+      "title1": "Entfesseln Sie die Kraft der",
+      "title2": "aufstrebenden Märkte",
+      "subtitle1": "Verabschieden Sie sich von komplexen Zahlungsproblemen und betreten Sie Afrika, Asien und den Maghreb mit Zuversicht.",
+      "subtitle2": "Akzeptieren und tätigen Sie Zahlungen mit einer Vielzahl lokaler Zahlungsmethoden und bevorzugter Währungen – alles über unsere All-in-One-Plattform.",
+      "cta": "Kontaktieren Sie uns und wachsen Sie mit Ihrem Unternehmen"
+    },
+    
+    "pricing": {
+      "title": "Preise",
+      "features": {
+        "noSetup": "Keine Einrichtungsgebühren",
+        "noMonthly": "Keine monatlichen Gebühren",
+        "payAsYouGo": "Zahlen Sie nach Nutzung"
+      },
+      "cards": {
+        "moroccan": "Marokkanische Karten",
+        "international": "Internationale Karten",
+        "description": "Pro erfolgreicher Kartenzahlung"
+      },
+      "banner": "ADP bietet Mengenrabatte, wenn Sie monatlich mehr als 500.000 Dirham Umsatz erzielen. Wir bieten auch Rabatte für lokale Marken und Händler."
+    }
+  }
